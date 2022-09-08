@@ -1,0 +1,1379 @@
+ps aux 		walin list karanwsiyalu services
+
+ps aux | grep 4002
+
+docker container ls
+
+CONTAINER ID   IMAGE                         COMMAND                  CREATED       STATUS       PORTS                                                  NAMES
+c5e2ee22996e   ridyio/delivery-gateway-box   "docker-entrypoint.s…"   4 weeks ago   Up 4 weeks   3002/tcp, 0.0.0.0:3333->3333/tcp, :::3333->3333/tcp    ridy-payment-gateways-1
+862951c8a89e   ridyio/ridy-rider-api         "docker-entrypoint.s…"   4 weeks ago   Up 4 weeks   3001/tcp, 0.0.0.0:4000->3000/tcp, :::4000->3000/tcp    ridy-taxi-rider-api-1
+e928356f3a02   ridyio/ridy-driver-api        "docker-entrypoint.s…"   4 weeks ago   Up 4 weeks   3002/tcp, 0.0.0.0:4002->3000/tcp, :::4002->3000/tcp    ridy-taxi-driver-api-1
+6b825cb95250   ridyio/ridy-admin-api         "docker-entrypoint.s…"   4 weeks ago   Up 4 weeks   0.0.0.0:4001->3000/tcp, :::4001->3000/tcp              ridy-taxi-admin-api-1
+cbadb97dae87   redis                         "docker-entrypoint.s…"   4 weeks ago   Up 4 weeks   6379/tcp                                               ridy-redis-1
+6eda94e4c7f4   ridyio/ridy-admin-panel       "/docker-entrypoint.…"   4 weeks ago   Up 4 weeks   0.0.0.0:4003->80/tcp, :::4003->80/tcp                  ridy-taxi-admin-panel-1
+e62e3d16762c   rider-app                     "/docker-entrypoint.…"   5 weeks ago   Up 5 weeks   0.0.0.0:4004->80/tcp, :::4004->80/tcp                  hardcore_mccarthy
+22508b1085e4   mysql:8.0.22                  "docker-entrypoint.s…"   5 weeks ago   Up 5 weeks   0.0.0.0:3306->3306/tcp, :::3306->3306/tcp, 33060/tcp   ridy-mysql-1
+
+
+
+docker images
+
+
+
+
+docker inspect -f '{{ .Mounts }}' containerid
+
+[{bind  /root/conf/ridy/config-new /app/config  rw true rprivate} {bind  /root/conf/ridy/img /app/uploads  rw true rprivate}]
+
+docker inspect  containerid
+meken balamu mokadda container eke image eka kiyala 
+
+
+
+
+
+
+
+
+
+==============================================
+
+
+
+
+[
+    {
+        "Id": "e928356f3a0228b4a090496857861dd2957bc81be1362d9474c31c6e2068800f",
+        "Created": "2022-08-03T11:28:48.313070146Z",
+        "Path": "docker-entrypoint.sh",
+        "Args": [
+            "node",
+            "main.js"
+        ],
+        "State": {
+            "Status": "running",
+            "Running": true,
+            "Paused": false,
+            "Restarting": false,
+            "OOMKilled": false,
+            "Dead": false,
+            "Pid": 135948,
+            "ExitCode": 0,
+            "Error": "",
+            "StartedAt": "2022-08-03T11:29:00.546581205Z",
+            "FinishedAt": "0001-01-01T00:00:00Z"
+        },
+        "Image": "sha256:53b759c3e97b88a329bb62fec89b123532573364ca0ae9d3b971d9aec287ecc0",
+        "ResolvConfPath": "/var/lib/docker/containers/e928356f3a0228b4a090496857861dd2957bc81be1362d9474c31c6e2068800f/resolv.conf",
+        "HostnamePath": "/var/lib/docker/containers/e928356f3a0228b4a090496857861dd2957bc81be1362d9474c31c6e2068800f/hostname",
+        "HostsPath": "/var/lib/docker/containers/e928356f3a0228b4a090496857861dd2957bc81be1362d9474c31c6e2068800f/hosts",
+        "LogPath": "/var/lib/docker/containers/e928356f3a0228b4a090496857861dd2957bc81be1362d9474c31c6e2068800f/e928356f3a0228b4a090496857861dd2957bc81be1362d9474c31c6e2068800f-json.log",
+        "Name": "/ridy-taxi-driver-api-1",
+        "RestartCount": 0,
+        "Driver": "overlay2",
+        "Platform": "linux",
+        "MountLabel": "",
+        "ProcessLabel": "",
+        "AppArmorProfile": "docker-default",
+        "ExecIDs": null,
+        "HostConfig": {
+            "Binds": [
+                "/root/conf/ridy/img:/app/uploads:rw",
+                "/root/conf/ridy/config-new:/app/config:rw"
+            ],
+            "ContainerIDFile": "",
+            "LogConfig": {
+                "Type": "json-file",
+                "Config": {}
+            },
+            "NetworkMode": "ridy_default",
+            "PortBindings": {
+                "3000/tcp": [
+                    {
+                        "HostIp": "",
+                        "HostPort": "4002"
+                    }
+                ]
+            },
+            "RestartPolicy": {
+                "Name": "always",
+                "MaximumRetryCount": 0
+            },
+            "AutoRemove": false,
+            "VolumeDriver": "",
+            "VolumesFrom": null,
+            "CapAdd": null,
+            "CapDrop": null,
+            "CgroupnsMode": "host",
+            "Dns": null,
+            "DnsOptions": null,
+            "DnsSearch": null,
+            "ExtraHosts": [],
+            "GroupAdd": null,
+            "IpcMode": "private",
+            "Cgroup": "",
+            "Links": null,
+            "OomScoreAdj": 0,
+            "PidMode": "",
+            "Privileged": false,
+            "PublishAllPorts": false,
+            "ReadonlyRootfs": false,
+            "SecurityOpt": null,
+            "UTSMode": "",
+            "UsernsMode": "",
+            "ShmSize": 67108864,
+            "Runtime": "runc",
+            "ConsoleSize": [
+                0,
+                0
+            ],
+            "Isolation": "",
+            "CpuShares": 0,
+            "Memory": 0,
+            "NanoCpus": 0,
+            "CgroupParent": "",
+            "BlkioWeight": 0,
+            "BlkioWeightDevice": null,
+            "BlkioDeviceReadBps": null,
+            "BlkioDeviceWriteBps": null,
+            "BlkioDeviceReadIOps": null,
+            "BlkioDeviceWriteIOps": null,
+            "CpuPeriod": 0,
+            "CpuQuota": 0,
+            "CpuRealtimePeriod": 0,
+            "CpuRealtimeRuntime": 0,
+            "CpusetCpus": "",
+            "CpusetMems": "",
+            "Devices": null,
+            "DeviceCgroupRules": null,
+            "DeviceRequests": null,
+            "KernelMemory": 0,
+            "KernelMemoryTCP": 0,
+            "MemoryReservation": 0,
+            "MemorySwap": 0,
+            "MemorySwappiness": null,
+            "OomKillDisable": false,
+            "PidsLimit": null,
+            "Ulimits": null,
+            "CpuCount": 0,
+            "CpuPercent": 0,
+            "IOMaximumIOps": 0,
+            "IOMaximumBandwidth": 0,
+            "MaskedPaths": [
+                "/proc/asound",
+                "/proc/acpi",
+                "/proc/kcore",
+                "/proc/keys",
+                "/proc/latency_stats",
+                "/proc/timer_list",
+                "/proc/timer_stats",
+                "/proc/sched_debug",
+                "/proc/scsi",
+                "/sys/firmware"
+            ],
+            "ReadonlyPaths": [
+                "/proc/bus",
+                "/proc/fs",
+                "/proc/irq",
+                "/proc/sys",
+                "/proc/sysrq-trigger"
+            ]
+        },
+        "GraphDriver": {
+            "Data": {
+                "LowerDir": "/var/lib/docker/overlay2/3f67394b42dfea0058960010318bc671bf42b55bd79fdad9eb07f373c8552a51-init/diff:/var/lib/docker/overlay2/a1f8ad35daa4d110680e7150b731c41a7090dd32e62eb052e36638c14898da54/diff:/var/lib/docker/overlay2/92b3e17c2e244fe79848a4a402ee3431584498ca240ddba054d1a2758c3c4a6d/diff:/var/lib/docker/overlay2/d13ae4123ebe846cb51c8df7acbe7dde9725e61fad65a4f4369900a581f02f6c/diff:/var/lib/docker/overlay2/1524be4b8708ae1af2ca31ae39a28adbb88b83f4bfdb4ae1e66cb15c6dcd5cfe/diff:/var/lib/docker/overlay2/8b9f14d883a1751df885583241669b862916f3062fdc6ed683792a63fa352e35/diff:/var/lib/docker/overlay2/f47febaadf07f9794efaf8b19385d2e368c0a0a21f390eb9eee57a43857bf5b0/diff:/var/lib/docker/overlay2/f1fefb2164373d934e65fa97adc1806859bd974c7fcb2b65dfc1e703c921827e/diff:/var/lib/docker/overlay2/67e6913602b1798f532a838fb390b30edc14f5f74ebe62bc0c2ced47cddd8c68/diff:/var/lib/docker/overlay2/dc1d57aaed4be3aa8cdba4e1f860b9e464111cf09ea601f96f442a6e2d640f4b/diff",
+                "MergedDir": "/var/lib/docker/overlay2/3f67394b42dfea0058960010318bc671bf42b55bd79fdad9eb07f373c8552a51/merged",
+                "UpperDir": "/var/lib/docker/overlay2/3f67394b42dfea0058960010318bc671bf42b55bd79fdad9eb07f373c8552a51/diff",
+                "WorkDir": "/var/lib/docker/overlay2/3f67394b42dfea0058960010318bc671bf42b55bd79fdad9eb07f373c8552a51/work"
+            },
+            "Name": "overlay2"
+        },
+        "Mounts": [
+            {
+                "Type": "bind",
+                "Source": "/root/conf/ridy/img",
+                "Destination": "/app/uploads",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            },
+            {
+                "Type": "bind",
+                "Source": "/root/conf/ridy/config-new",
+                "Destination": "/app/config",
+                "Mode": "rw",
+                "RW": true,
+                "Propagation": "rprivate"
+            }
+        ],
+        "Config": {
+            "Hostname": "e928356f3a02",
+            "Domainname": "",
+            "User": "",
+            "AttachStdin": false,
+            "AttachStdout": true,
+            "AttachStderr": true,
+            "ExposedPorts": {
+                "3000/tcp": {},
+                "3002/tcp": {}
+            },
+            "Tty": false,
+            "OpenStdin": false,
+            "StdinOnce": false,
+            "Env": [
+                "ENCRYPTION_KEY=lPw3ethAy4WqnWa3b4TAbCUJr89RifEs",
+                "MYSQL_HOST=mysql",
+                "GATEWAY_SERVER_URL=http://x.x.x.x:3333",
+                "DRIVER_SERVER_URL=http://x.x.x.x:4002",
+                "REDIS_HOST=redis",
+                "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin",
+                "NODE_VERSION=16.13.1",
+                "YARN_VERSION=1.22.15"
+            ],
+            "Cmd": [
+                "node",
+                "main.js"
+            ],
+            "Image": "ridyio/ridy-driver-api",
+            "Volumes": {
+                "/app/config": {},
+                "/app/uploads": {}
+            },
+            "WorkingDir": "/app",
+            "Entrypoint": [
+                "docker-entrypoint.sh"
+            ],
+            "OnBuild": null,
+            "Labels": {
+                "com.docker.compose.config-hash": "19e8da971af8546968c8336357b37df2ba7adceca5488da23b9ba2a30ed5393c",
+                "com.docker.compose.container-number": "1",
+                "com.docker.compose.depends_on": "mysql:service_started,redis:service_started,taxi-admin-api:service_started",
+                "com.docker.compose.image": "sha256:53b759c3e97b88a329bb62fec89b123532573364ca0ae9d3b971d9aec287ecc0",
+                "com.docker.compose.oneoff": "False",
+                "com.docker.compose.project": "ridy",
+                "com.docker.compose.project.config_files": "/root/conf/ridy/docker-compose.yaml",
+                "com.docker.compose.project.working_dir": "/root/conf/ridy",
+                "com.docker.compose.service": "taxi-driver-api",
+                "com.docker.compose.version": "2.6.0"
+            }
+        },
+        "NetworkSettings": {
+            "Bridge": "",
+            "SandboxID": "d2bd234fcc3772d9d45556db1b98fef9e46eedd267e74e3e4dfd306a9c5591a7",
+            "HairpinMode": false,
+            "LinkLocalIPv6Address": "",
+            "LinkLocalIPv6PrefixLen": 0,
+            "Ports": {
+                "3000/tcp": [
+                    {
+                        "HostIp": "0.0.0.0",
+                        "HostPort": "4002"
+                    },
+                    {
+                        "HostIp": "::",
+                        "HostPort": "4002"
+                    }
+                ],
+                "3002/tcp": null
+            },
+            "SandboxKey": "/var/run/docker/netns/d2bd234fcc37",
+            "SecondaryIPAddresses": null,
+            "SecondaryIPv6Addresses": null,
+            "EndpointID": "",
+            "Gateway": "",
+            "GlobalIPv6Address": "",
+            "GlobalIPv6PrefixLen": 0,
+            "IPAddress": "",
+            "IPPrefixLen": 0,
+            "IPv6Gateway": "",
+            "MacAddress": "",
+            "Networks": {
+                "ridy_default": {
+                    "IPAMConfig": null,
+                    "Links": null,
+                    "Aliases": [
+                        "ridy-taxi-driver-api-1",
+                        "taxi-driver-api",
+                        "e928356f3a02"
+                    ],
+                    "NetworkID": "40d2dc2a9ac79b1828440d63a159df8f2461e021b4e97639a02886b8d97c7fe2",
+                    "EndpointID": "7db05ddc576846575be023bf675b0134ac83dd81dafbb0a35ea5a8cb24291e4e",
+                    "Gateway": "172.18.0.1",
+                    "IPAddress": "172.18.0.6",
+                    "IPPrefixLen": 16,
+                    "IPv6Gateway": "",
+                    "GlobalIPv6Address": "",
+                    "GlobalIPv6PrefixLen": 0,
+                    "MacAddress": "02:42:ac:12:00:06",
+                    "DriverOpts": null
+                }
+            }
+        }
+    }
+]
+
+
+
+==================================================
+
+
+docker image history image id
+docker image history ridyio/ridy-driver-api        
+
+mekedi mama dakka 
+
+IMAGE          CREATED        CREATED BY                                      SIZE      COMMENT
+53b759c3e97b   4 weeks ago    CMD ["node" "main.js"]                          0B        buildkit.dockerfile.v0
+<missing>      4 weeks ago    EXPOSE map[3002/tcp:{}]                         0B        buildkit.dockerfile.v0
+<missing>      4 weeks ago    COPY /app/dist/apps/driver-api ./ # buildkit    626kB     buildkit.dockerfile.v0
+<missing>      4 weeks ago    RUN /bin/sh -c npm i mysql # buildkit           2.12MB    buildkit.dockerfile.v0
+<missing>      4 weeks ago    RUN /bin/sh -c npm i --force # buildkit         255MB     buildkit.dockerfile.v0
+<missing>      4 weeks ago    COPY /app/dist/apps/driver-api/package.json …   1.32kB    buildkit.dockerfile.v0
+<missing>      4 weeks ago    WORKDIR /app                                    0B        buildkit.dockerfile.v0
+<missing>      8 months ago   /bin/sh -c #(nop)  CMD ["node"]                 0B
+<missing>      8 months ago   /bin/sh -c #(nop)  ENTRYPOINT ["docker-entry…   0B
+<missing>      8 months ago   /bin/sh -c #(nop) COPY file:4d192565a7220e13…   388B
+<missing>      8 months ago   /bin/sh -c apk add --no-cache --virtual .bui…   7.77MB
+<missing>      8 months ago   /bin/sh -c #(nop)  ENV YARN_VERSION=1.22.15     0B
+<missing>      8 months ago   /bin/sh -c addgroup -g 1000 node     && addu…   96.5MB
+<missing>      8 months ago   /bin/sh -c #(nop)  ENV NODE_VERSION=16.13.1     0B
+<missing>      9 months ago   /bin/sh -c #(nop)  CMD ["/bin/sh"]              0B
+<missing>      9 months ago   /bin/sh -c #(nop) ADD file:9233f6f2237d79659…   5.59MB
+
+pahala deka aapu nisa
+COPY /app/dist/apps/driver-api ./ # buildkit
+COPY /app/dist/apps/driver-api/package.json …
+
+
+mama docker exec eke ee folder path deka balanna baluwe
+
+
+docker exec -t -i container_name sh
+docker exec -t -i e928356f3a02 sh
+
+
+
+balamu meka image ekata monawa hari embeded karalada kiyala 
+
+
+
+
+me mama port ekata giyama penwanne monawada baluwa 
+
+
+http://162.0.214.243:4000	or 	http://taxiva24h.com:4000/
+ Rider API microservice running.
+kiyala watenwa 
+
+4001 
+ Admin API microservice running.
+
+4002
+Driver API microservice running.
+
+4003
+rauma kAraki kAraki thibila 
+R kyala lokuwata login ekak enwa . mn hithanne admin panl eka  tyenne
+
+4004 
+gahuwata passe map eka enwa 
+
+3333
+ Payment Gateways microservice running.
+
+3336
+meke mysql eka run wenne . so eeka browser eken access karanna baha 
+
+
+
+
+
+
+ls -l  conf/ridy			kiyana eke thama api folder list eka okkoma daanna oni 
+mama sahenna gemak dila docker container ekak inspect karala thama hoyagatthe eeka
+
+ 
+
+https://flutter-docs.taxi.ridy.io/installation/server-side
+meke tyenwa docker compose eka up down karana hati 
+
+
+
+history 		 command eka gahala baluwa kalin deployement eke di gahapu codes monawada kiyala .
+
+
+
+   17  docker ps
+   18  docker logs driver-api
+   19  docker logs 43e564a93a3b
+   20  docker ps
+   21  docker rm 43e564a93a3b
+   22  docker rm 43e564a93a3b -f
+   23  docker ps
+   24  docker compose -f docker-compose.yaml.save up -d
+   25  docker ps
+   26  docker logs 118872fba2c8
+   27  docker ps
+   28  docker logs d847890c132e
+   29  docker ps
+   30  docker rm d847890c132e
+   31  docker rm d847890c132e -f
+   32  docker compose up -d
+   33  docker ps
+   34  docker compose down
+   35  docker compose -f docker-compose.yaml.save up -d
+   36  docker ps
+   37  docker logs ce744636f2f8
+   38  docker ps
+   39  docker logs 852a73700cab
+   40  docker ps
+   41  cd conf/ridy
+   42  docker logs ce744636f2f8
+   43  docker ps
+   44  docker rm ce744636f2f8 -f
+   45  docker compose -f docker-compose.yaml.save up -d
+   46  docker ps
+   47  docker logs 900272c2540e
+   48  docker ps
+   49  docker rm 900272c2540e -f
+   50  docker compose -f docker-compose.yaml.save up -d
+   51  docker ps
+   52  docker logs 0a4471896d07
+   53  docker ps
+   54  docker logs 852a73700cab
+   55  docker ps
+   56  docker logs 852a73700cab
+   57  docker ps
+   58  docker rm 852a73700cab
+   59  docker rm 852a73700cab -f
+   60  docker compose -f docker-compose.yaml.save up -d
+   61  docker ps
+   62  docker logs rider-api
+   63  docker ps
+   64  docker logs 45842b6ee469
+   65  docker ps
+   66  docker rm 45842b6ee469 -f
+   67  docker ps
+   68  docker compose -f docker-compose.yaml.save up -d
+   69  docker ps
+   70  docker logs 308ea65aeb55
+   71  ls -lrt
+   72  ls -lart
+   73  vi .git
+   74  cd .git
+   75  lls
+   76  ls
+   77  ls -lrt
+   78  cd info/
+   79  ls
+   80  cd
+   81  cd conf/ridy/.git
+   82  ls -lrt
+   83  git config --get remote.origin.url
+   84  cd ../
+   85  git branch
+   86  git pull
+   87  git checkout master
+   88  git diff docker-compose.yaml
+   89  git diff
+   90  docker compose down
+   91  docker ps
+   92  docker rm 1ecb676c31e1 -f
+   93  docker compose up -d
+   94  docker ps
+   95  docker ps
+   96  docker ps
+   97  docker ps
+   98  docker ps
+   99  docker ps
+  100  docker ps
+  101  docker ps
+  102  docker ps
+  103  docker ps
+  104  docker ps
+  105  docker logs cff95f271c36
+  106  lsof -i:4001
+  107  lsof -i:4001
+  108  ls -lrt
+  109  cd backup/
+  110  ls
+  111  cd ../
+  112  ls
+  113  locate mysqlvol
+  114  find mysqlvol
+  115  mysql
+  116  apt install mysql-client-core-8.0
+  117  mysql
+  118  mysql -h localhost -P 3306 --protocol=tcp -u root
+  119  mysql -P 3306 --protocol=tcp -u root -p
+  120  history
+  121  cls
+  122  clear
+  123  docker compose down
+  124  docker ps
+  125  docker-compose down
+  126  docker compose up -d
+  127  docker ps
+  128  docker ps
+  129  docker ps
+  130  docker ps
+  131  docker ps
+  132  ls -lrt
+  133  vi docker-compose.yaml
+  134  cd apps
+  135  ls
+  136  ls -lrt
+  137  cd rider-app/
+  138  ls -lrt
+  139  cd lib/main/
+  140  vi service_item_view.dart
+  141  cd ../../
+  142  vi Dockerfile
+  143  cd ../
+  144  cd ../
+  145  docker build -t rider-app -f apps/rider-app/Dockerfile .
+  146  docker images
+  147  docker run -it -d rider-app -p 4004:80
+  148  docker ps
+  149  docker container
+  150  docker container ls
+  151  docker logs 6a999aa8157295f5efabc084898fabbd7810d610813c8237ee8be9b40347c3b5
+  152  docker run -d rider-app -p 4004:80
+  153  docker logs 55fde1c98fc0a24781c297f8532e0d124a334962f0854785863fc6d009e9497f
+  154  docker run -p 4004:80 -d rider-app
+  155  docker logs 832c942e6262e0c0b87f3cc93cb33c6f84f354b7f582f396dffd463ceee6cde4
+  156  lsof -i:4004
+  157  locate
+  158  find google-service.json
+  159  cd conf
+  160  ls
+  161  cd ridy_bkp/
+  162  ls -lrt
+  163  cd apps
+  164  ;s
+  165  ls
+  166  cd rider-app
+  167  cd android/app/
+  168  ls -lrt
+  169  vi google-services.json
+  170  cd conf/
+  171  ls
+  172  cd ridy
+  173  ls
+  174  git branch
+  175  docker ps
+  176  docker compose up -d
+  177  docker ps
+  178  docker ps
+  179  docker ps
+  180  docker images ls
+  181  docker images
+  182  history |grep docker
+  183  docker build -t rider-app -f apps/rider-app/Dockerfile .
+  184  docker run -it -d rider-app -p 4004:80
+  185  docker ps
+  186  docker logs f2bf2377c4a47da9979babe6fd598eb4fced469339e9b0d950060898d923f0b6
+  187  docker run -p 4004:80 -d rider-app
+  188  lsof -i:4000
+  189  lsof -i:4000
+  190  lsof -i:4000
+  191  lsof -i:4000
+  192  docker ps
+  193  vi docker-compose.yaml
+  194  docker compose up
+  195  lsof -i:4000
+  196  kill -9 738
+  197  lsof -i:4000
+  198  docker compose up
+  199  docker compose up -d
+  200  docker ps
+  201  docker ps
+  202  cd conf/ridy
+  203  ls -lrt
+  204  cd driver-app
+  205  cd apps/driver-ap
+  206  cd apps/driver-app
+  207  ls
+  208  ls -lrt
+  209  pwd
+  210  flutter build web
+  211  cd conf
+  212  cd ridy
+  213  ls -lrt
+  214  cd ../
+  215  ls -lrt
+  216  cp -r ridy/ ridy_runn_bkp/
+  217  ls -lrt
+  218  cd ridy_runn_bkp
+  219  ls
+  220  cd
+  221  cd conf/ridy
+  222  ls
+  223  cd apps/driver-app
+  224  ls -lrt
+  225  flutter build web
+  226  cp ../rider-app/Dockerfile ./
+  227  ls -lrt
+  228  vi Dockerfile
+  229  docker build -t driver-app .
+  230  cd ../../
+  231  docker build -t driver-app -f apps/driver-app/Dockerfile
+  232  docker build -t driver-app -f apps/driver-app/Dockerfile .
+  233  docker run driver-app -p 4005:80 -d
+  234  docker run -p 4004:80 -d driver-app
+  235  docker run -p 4005:80 -d driver-app
+  236  docker log 5095f47765a3799311acc3d724d183a3de4e388b96c34ebef5cb9c0960c27f3f
+  237  docker logs 5095f47765a3799311acc3d724d183a3de4e388b96c34ebef5cb9c0960c27f3f
+  238  docker logs 5095f47765a3799311acc3d724d183a3de4e388b96c34ebef5cb9c0960c27f3f
+  239  docker logs 5095f47765a3799311acc3d724d183a3de4e388b96c34ebef5cb9c0960c27f3f
+  240  docker logs 5095f47765a3799311acc3d724d183a3de4e388b96c34ebef5cb9c0960c27f3f
+  241  docker ps
+  242  history
+  243  docker ps
+  244  docker rm 5095f47765a3
+  245  docker rm 5095f47765a3 -f
+  246  docker ps
+  247  docker build -t driver-app -f apps/driver-app/Dockerfile .
+  248  cd apps/driver-app/
+  249  vi Dockerfile
+  250  cd ../
+  251  cd ../
+  252  docker build -t driver-app -f apps/driver-app/Dockerfile .
+  253  docker run -p 4005:80 -d driver-app
+  254  docker logs -i 3063349e41ad663e667b0267acb61378f40eb08329592bf63356677a2304ad29
+  255  docker logs 3063349e41ad663e667b0267acb61378f40eb08329592bf63356677a2304ad29
+  256  docker logs 3063349e41ad663e667b0267acb61378f40eb08329592bf63356677a2304ad29
+  257  doker ps
+  258  docker ps
+  259  docker rm 3063349e41ad
+  260  docker rm 3063349e41ad -f
+  261  docker ps
+  262  cd
+  263  cd conf/ridy
+  264  ls -lrt
+  265  cd driver-app
+  266  cd apps/driver-app
+  267  vi Dockerfile
+  268  cd ../
+  269  cd ../
+  270  docker build -t driver-app -f apps/driver-app/Dockerfile .
+  271  docker run -p 4005:80 -d driver-app:latest
+  272  docker logs 1469d8fbe058d62b048126efd20321c9b584ba149727202abf0c16a71069358c
+  273  docker logs 1469d8fbe058d62b048126efd20321c9b584ba149727202abf0c16a71069358c
+  274  docker logs 1469d8fbe058d62b048126efd20321c9b584ba149727202abf0c16a71069358c
+  275  docker logs 1469d8fbe058d62b048126efd20321c9b584ba149727202abf0c16a71069358c
+  276  docker ps
+  277  docker logs 1469d8fbe058
+  278  ls -lrt
+  279  cd ../
+  280  ls
+  281  rm -rf ridy_runn_bkp/
+  282  ls
+  283  cp -r ridy/ ridy_bkp_running/
+  284  cd ridy_bkp_running/
+  285  ls
+  286  ls -lrt
+  287  cd snap/
+  288  ls
+  289  cd flutter/
+  290  ls
+  291  ls -lrt
+  292  cd current
+  293  ls
+  294  cd ../common/
+  295  ls
+  296  cd flutter/
+  297  ls
+  298  ls -lrt
+  299  cd
+  300  cd conf/
+  301  ls
+  302  cd ridy
+  303  ls -lrt
+  304  docker ps
+  305  docker rm 1469d8fbe058 -f
+  306  docker rm 6318f57cfd45 -f
+  307  docker rm caf026575e63 -f
+  308  docker rm e4cd039feab2 -f
+  309  docker rm 6fd18286f3ce -f
+  310  docker rm 19cd54ee495a -f
+  311  docker rm d1775c93acbf -f
+  312  docker ps
+  313  docker images
+  314  s
+  315  docker rm $(docker ps -a -f status=exited -q)
+  316  docker image prune
+  317  docker image prune
+  318  vi docker-compose.yaml
+  319  docker compose up -d
+  320  cd ../
+  321  ls -lrt
+  322  cd ridy_bkp
+  323  ls
+  324  ls -lrt
+  325  vi docker-compose.yaml
+  326  docker compose down
+  327  cd
+  328  cd conf/ridy
+  329  docker compose down
+  330  docker compose up -d
+  331  docker ps
+  332  docker ps
+  333  docker ps
+  334  docker rm 0e8258bec9c7
+  335  docker rm 0e8258bec9c7 -f
+  336  docker build -t rider-app -f apps/rider-app/Dockerfile .
+  337  docker run -p 4004:80 -d rider-app
+  338  docker ps
+  339  docker ps
+  340  docker ps
+  341  docker rm c4117dded251 -f
+  342  docker compose up -d
+  343  docker ps
+  344  docker ps
+  345  docker ps
+  346  docker ps
+  347  docker logs a206ac0fa990
+  348  docker logs a206ac0fa990 -n
+  349  docker logs -n a206ac0fa990
+  350  docker logs --help
+  351  docker logs a206ac0fa990 -n 100
+  352  docker logs a206ac0fa990 -n 100
+  353  docker logs a206ac0fa990 -n 100
+  354  docker logs a206ac0fa990 -n 100
+  355  docker logs a206ac0fa990 -n 100
+  356  docker ps
+  357  docker rm a206ac0fa990 -f
+  358  docker run -p 4004:80 -d rider-app
+  359  docker ps
+  360  ls
+  361  cd conf/
+  362  ls
+  363  cd ridy
+  364  ls
+  365  nano docker-compose.yaml
+  366  docker compose up -d
+  367  docker compose pull
+  368  docker compose up -d
+  369  docker ps
+  370  ls
+  371  mysql
+  372  sql
+  373  cls
+  374  ls
+  375  dir
+  376  help
+  377  ls
+  378  ftp
+  379  os
+  380  cls
+  381  dir
+  382  cls
+  383  clear
+  384  ls
+  385  zip
+  386  zip -l -b conf/ridy_bkp_running
+  387  zip -l -b conf/ridy_bkp_running/
+  388  zip -l -b .conf/ridy_bkp_running/
+  389  zip -b help
+  390  zip h2
+  391  zip help
+  392  zip /?
+  393  zip
+  394  zip -h2
+  395  sudo apt-get install nodejs npm
+  396  ls
+  397  cd conf
+  398  ls
+  399  cd ridy_bkp_running
+  400  ls
+  401  sudo npm install
+  402  ls
+  403  type readme.md
+  404  ls
+  405  sudo npm run start
+  406  clear
+  407  clear
+  408  sudo npm run
+  409  sudo npm format
+  410  sudo npm run format
+  411  sudo npm run
+  412  ls
+  413  sudo type config_new
+  414  sudo ehco config_new
+  415  help
+  416  ls
+  417  type nx.json
+  418  type .\nx.json
+  419  type /\nx.json
+  420  type ./nx.json
+  421  ls
+  422  clear
+  423  ls
+  424  ls img
+  425  ls
+  426  .\server.txt
+  427  server.txt
+  428  ls
+  429  clear
+  430  help
+  431  ls
+  432  clear
+  433  passwd
+  434   netstat -tunlp
+
+
+
+
+
+
+me thiyenne history eka 
+
+
+
+api ilagata mehema karamu 
+
+
+ls conf/ridy 		kiyala gahamu 
+cd conf/ridy	giya
+docker compose down		gahala balamu mulin
+
+
+dan mama port tika test karanna yanne down karala itapasse
+
+
+http://162.0.214.243:4000	or 	http://taxiva24h.com:4000/
+wada naha
+
+4001 
+ wada naha 
+
+4002
+wada naha 
+
+4003
+wada naha
+
+4004 
+gahuwata passe map eka enwa .meeka wada
+
+3333
+wada naha
+
+3336
+meke mysql eka run wenne . so eeka browser eken balanna karanna baha 
+
+
+
+ekak witarak wada 4004 so 
+
+netstat -tunlp
+		gahamu
+
+4004 thaama tyenwa thamai 
+
+
+hari eeka poddak patthakin tyala aaya e compose eka up karala balamu
+
+docker compose up -d
+
+
+
+Error response from daemon: driver failed programming external connectivity on endpoint ridy-rider-web-app-1 (90f316c2cdb3f23eb747cc39d2c0108812ab7d94ecc82214dd6b2c7a3d231444): Bind for 0.0.0.0:4004 failed: port is already allocated
+
+mehema aulak awa
+port eka already used kiyala . harine bn ithin 
+
+anyway dan okkoma wada
+
+aaya down karala ara 4004 container eka stop karala balamu compose eken up weida kiyala 
+
+docker ps
+ekak tyewan 
+
+
+docker stop my_container
+
+
+dAn docker compose up kalaa
+
+aulak naha wage
+hari siyalu port wAda karanwa 
+
+ehenam docker compose down karala 
+ee folder eken root eka athulata awilla 
+eke work kiyala ekak hadamu
+
+down karala mama nikamata baluwa port 4004 wAdada kiyala 
+eeka wAda ban 
+eeka hamawelema manually down karanna wena seen ekak tywenne 
+
+adoo noooooo
+
+netstat -tunlp
+eke baluwath 
+docker ps eke baluwath 4004 ta container ekak naha 
+but site eka wada ne bn 
+ah hari mama hithanne cache ekak thibila tyenne browser eke
+dan wada naha 
+
+
+
+
+
+
+
+
+
+
+================================================
+
+freshly karana nisa documentation eka meka 
+
+first created a filder as work in root home directory 
+
+uploaded the zip to it and unzip . [ still didn't install node modules . no need to install them . cuz Docker files inside the apis have the commands for it  ]
+
+unzip codecanyon-y3ExymE2-ridy-flutter-full-taxi-solution.zip
+
+rm codecanyon-y3ExymE2-ridy-flutter-full-taxi-solution.zip
+
+
+Then i created a 
+touch docker-compose.yaml
+
+
+
+pasted below 
+
+
+===========
+
+
+version: '3'
+
+services:
+  mysql:
+    image: mysql:8.0.22
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysqlvol:/var/lib/mysql
+      - ./backup:/var/backup
+    environment:
+      MYSQL_ROOT_PASSWORD: defaultpassword
+    ports:
+      - "3306:3306"
+
+  redis:
+    image: redis
+    volumes:
+      - redisvol:/data
+
+  taxi-rider-api:
+    image: ridyio/ridy-rider-api
+    restart: always
+    depends_on:
+      - "mysql"
+      - "redis"
+      - "taxi-admin-api"
+    volumes:
+      - ./img:/app/uploads
+      - ./config-new:/app/config
+    environment:
+      - MYSQL_HOST=mysql
+      - GATEWAY_SERVER_URL=http://x.x.x.x:3333
+      - RIDER_SERVER_URL=http://x.x.x.x:4000
+      - ENCRYPTION_KEY=lPw3ethAy4WqnWa3b4TAbCUJr89RifEs
+      - REDIS_HOST=redis
+    ports:
+      - "4000:3000"
+
+  taxi-driver-api:
+    image: ridyio/ridy-driver-api
+    restart: always
+    depends_on:
+      - "mysql"
+      - "redis"
+      - "taxi-admin-api"
+    volumes:
+      - ./img:/app/uploads
+      - ./config-new:/app/config
+    environment:
+      - MYSQL_HOST=mysql
+      - GATEWAY_SERVER_URL=http://x.x.x.x:3333
+      - DRIVER_SERVER_URL=http://x.x.x.x:4002
+      - REDIS_HOST=redis
+      - ENCRYPTION_KEY=lPw3ethAy4WqnWa3b4TAbCUJr89RifEs
+    ports:
+      - "4002:3000"
+
+  taxi-admin-api:
+    image: ridyio/ridy-admin-api
+    restart: always
+    depends_on:
+      - "mysql"
+      - "redis"
+    links:
+      - mysql
+    volumes:
+      - ./img:/app/uploads
+      - ./config-new:/app/config
+    environment:
+      - MYSQL_HOST=mysql
+      - REDIS_HOST=redis
+    ports:
+      - "4001:3000"
+
+  taxi-admin-panel:
+    image: ridyio/ridy-admin-panel
+    restart: always
+    volumes:
+       - taxiassets:/usr/share/nginx/html/assets
+    ports:
+      - "4003:80"
+
+  payment-gateways:
+    image: ridyio/delivery-gateway-box
+    depends_on:
+      - "taxi-rider-api"
+    ports:
+      - "3333:3333"
+    environment:
+      - MYSQL_HOST=mysql
+      - TEST_MODE=true
+      - MYSQL_DB=ridy
+      - GATEWAY_SERVER_URL=http://x.x.x.x:3333
+      - ENCRYPTION_KEY=lPw3ethAy4WqnWa3b4TAbCUJr89RifEs
+
+volumes:
+  redisvol:
+  mysqlvol:
+  taxiassets:
+
+
+
+
+========
+
+
+docker compose up -d
+
+up unata wAda naha 
+aul eewa
+
+so mama ara kalin aru liyala thibba compose file eka mekata dala mama liyapu eka ayin karanna bluwen
+
+docker compose down
+
+
+
+=========
+
+
+
+
+
+version: '3'
+
+services:
+  mysql:
+    image: mysql:8.0.22
+    command: --default-authentication-plugin=mysql_native_password
+    volumes:
+      - mysqlvol:/var/lib/mysql
+      - ./backup:/var/backup
+    environment:
+      MYSQL_ROOT_PASSWORD: defaultpassword
+    ports:
+      - "3306:3306"
+
+  redis:
+    image: redis
+    volumes:
+      - redisvol:/data
+
+  taxi-rider-api:
+    image: ridyio/ridy-rider-api
+    restart: always
+    depends_on:
+      - "mysql"
+      - "redis"
+      - "taxi-admin-api"
+    volumes:
+      - ./img:/app/uploads
+      - ./config-new:/app/config
+    environment:
+      - MYSQL_HOST=mysql
+      - GATEWAY_SERVER_URL=http://x.x.x.x:3333
+      - RIDER_SERVER_URL=http://x.x.x.x:4000
+      - ENCRYPTION_KEY=lPw3ethAy4WqnWa3b4TAbCUJr89RifEs
+      - REDIS_HOST=redis
+    ports:
+      - "4000:3000"
+
+  taxi-driver-api:
+    image: ridyio/ridy-driver-api
+    restart: always
+    depends_on:
+      - "mysql"
+      - "redis"
+      - "taxi-admin-api"
+    volumes:
+      - ./img:/app/uploads
+      - ./config-new:/app/config
+    environment:
+      - MYSQL_HOST=mysql
+      - GATEWAY_SERVER_URL=http://x.x.x.x:3333
+      - DRIVER_SERVER_URL=http://x.x.x.x:4002
+      - REDIS_HOST=redis
+      - ENCRYPTION_KEY=lPw3ethAy4WqnWa3b4TAbCUJr89RifEs
+    ports:
+      - "4002:3000"
+
+  taxi-admin-api:
+    image: ridyio/ridy-admin-api
+    restart: always
+    depends_on:
+      - "mysql"
+      - "redis"
+    links:
+      - mysql
+    volumes:
+      - ./img:/app/uploads
+      - ./config-new:/app/config
+    environment:
+      - MYSQL_HOST=mysql
+      - REDIS_HOST=redis
+    ports:
+      - "4001:3000"
+
+  taxi-admin-panel:
+    image: ridyio/ridy-admin-panel
+    restart: always
+    volumes:
+       - taxiassets:/usr/share/nginx/html/assets
+    ports:
+      - "4003:80"
+
+  rider-web-app:
+    image: ridyio/rider-web-app
+    restart: always
+    volumes:
+        - taxiassets:/usr/share/nginx/html/assets
+    ports:
+      - "4004:80"
+
+  payment-gateways:
+    image: ridyio/delivery-gateway-box
+    depends_on:
+      - "taxi-rider-api"
+    ports:
+      - "3333:3333"
+    environment:
+      - MYSQL_HOST=mysql
+      - TEST_MODE=true
+      - MYSQL_DB=ridy
+      - GATEWAY_SERVER_URL=http://x.x.x.x:3333
+      - ENCRYPTION_KEY=lPw3ethAy4WqnWa3b4TAbCUJr89RifEs
+
+volumes:
+  redisvol:
+  mysqlvol:
+  taxiassets:
+
+
+
+
+
+===========
+
+
+dan 4000 wada naha 
+4001 	   {"statusCode":404,"message":"Cannot GET /","error":"Not Found"}
+4002		wada nah a
+4003		kelinma login ekata yanwa
+4004  wada
+3333		meka wada 
+3306		meeka test karanna widihak naha ithin
+
+
+
+
+
+
+athuth eke thawa case ekak 
+mysql table nahalu
+somama 
+docer ps gahala 
+adaala  container eka athulata
+
+docker exec -it <container id> sh 
+gahala giyaa
+
+aluth eke inne 
+ita psse mysql ekata log wenna baluwe
+
+
+
+mysql -u root -p
+defaultpassword		kiyana eka thama password eka 
+
+show databases ;
+
+
+mysql> show databases ;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| ridy               |
+| sys                |
++--------------------+
+5 rows in set (0.01 sec)
+
+
+
+use ridy 
+
+show tables ;
+
+
+Database changed
+mysql> show tables ;
+
++----------------+
+| Tables_in_ridy |
++----------------+
+| migrations     |
++----------------+
+1 row in set (0.00 sec)
+
+
+
+
+dan docker compose down karala kalin compose file eka up karala [ kalin up karala thibbe mama gaddi ]
+eeke table balamu 
+
++-------------------------------------------+
+| Tables_in_ridy                            |
++-------------------------------------------+
+| admin_transaction                         |
+| admin_wallet                              |
+| car                                       |
+| car_color                                 |
+| complaint                                 |
+| complaint_activity                        |
+| coupon                                    |
+| coupon_services_service                   |
+| driver                                    |
+| driver_services_service                   |
+| driver_transaction                        |
+| driver_wallet                             |
+| fleet                                     |
+| fleet_transaction                         |
+| fleet_wallet                              |
+| gift_card                                 |
+| media                                     |
+| migrations                                |
+| operator                                  |
+| operator_role                             |
+| payment                                   |
+| payment_gateway                           |
+| promotion                                 |
+| region                                    |
+| request                                   |
+| request_activity                          |
+| request_chat                              |
+| request_options_service_option            |
+| request_review                            |
+| review_parameter                          |
+| review_parameter_feedbacks_request_review |
+| rider                                     |
+| rider_address                             |
+| rider_coupons_coupon                      |
+| rider_transaction                         |
+| rider_wallet                              |
+| service                                   |
+| service_category                          |
+| service_option                            |
+| service_regions_region                    |
+| sos                                       |
+| sos_activity                              |
++-------------------------------------------+
+42 rows in set (0.01 sec)
+
+
+
+
+
+
+
+
+
+
+mama hithanne mehemai 
+mysql eke volume dekakata mount dekak gahanwane 
+e deka ta adaalawa folder hAdila naha meeka athule 
+but kalin thibba eke hAdila 
+
+
+
+volumes:
+      - mysqlvol:/var/lib/mysql
+      - ./backup:/var/backup
+
+mehema tyeenne 
+backup eka hadnwa 
+eka kohomath 
+./ folder eke kiyalane kiyanne 
+eeka aulk naha ethkota 
+
+mysqlvol kiyana ekathama hoyanna natthe .
+
+so eekath 
+./mysqlvol kiyala damuda balanna 
+
+
+mehemai 
+./ daala liyana eewa volume walata wAtenne nha a
+
+
+ara volume kiyala dala tyena ewa tyenne . 
+yatamath volumes kiyala liyala . eewa volumes walata watenwa 
+
+/var/lib/docker/volumes/
+
+[meeke thibbata ithin mehemai . volumes name  walin naha . encrypt wela wage tyenne . docker volume ls   walin ma ganna oni ]
+
+docker volume ls 
+walin eeka ganna pluwan
+
+so mehma karamu 
+
+kalin eken hadunu siyalu volume tika delete karala daamu 
+iwarane wAde
+
+
+docker volume rm vol-name 
+
+
+
+okkoma ayin karala aaya compose eka up karamu [ compose file eke kisi wenasak kale naha hode ]
+
+
+hari everything works fine now 
+
+
+
+
+
+
+
+
+
+
+
+
+
